@@ -10,5 +10,8 @@ func main() {
 
 	open := port.ScanPort("tcp", "localhost", 3306)
 
-	fmt.Printf("Port open: %t\n", open)
+	fmt.Printf("Port open: %s\n", open.State)
+
+	results := port.InitialScan("localhost")
+	fmt.Println(results)
 }
